@@ -1,7 +1,7 @@
 # This particular code will alow you to automate your hosting environment, and bring it home to your pi, or pi's.
 
 - I will start with utillizing a single pi, and move into a pi cluster.
-  - which can be replicated on any self-hosting environment.
+  - which can be replicated on any **self-hosting Rasberry-pi** environment.
 
 ## Why do this at all?
 
