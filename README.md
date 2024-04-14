@@ -1,4 +1,4 @@
-# This particular code will alow you to automate your hosting environment, and allow you to bring it home to your pi, or pi's.
+# This particular code will alow you to automate your hosting environment, and bring it home to your pi, or pi's.
 
 - I will start with utillizing a single pi, and move into a pi cluster.
   - which can be replicated on any self-hosting environment.
