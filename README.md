@@ -15,6 +15,9 @@ This isn’t about criticizing any major cloud service provider. I simply enjoy 
 
 2. Install Docker 🐳
 
+- `sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`
+- **To test the install** run:
+
 - Then we are going to grab their IP addresses, and make note of which Pi had which IP address.
 - Then ssh into each one and install Docker using the official release.
 
