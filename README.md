@@ -53,9 +53,9 @@ For more examples and ideas, visit:
 3. Create the cluster using Docker Swarm.
 4. Write the `docker-compose.yml` for your services
 
-- Time to get to defining our services! In this case, I had two websites I wanted to host: 1) my personal website (where you’re reading this post!) and 2) an uber-professional website that’s an inside joke.
-
-If you’re familiar with Docker, this part is quite straightforward. I had already pushed my website images up to Docker Hub, so this was a pretty quick operation. The only Swarm-specific thing I needed to do is to tell Docker that I had a custom network called `chris-server` and then make sure that my services connect to it.
+- Time to get to defining our services! In this case, I had two websites I wanted to host: **1** my personal website, and **2** a in hopes of, professional website.
+*/This is were i left off*/
+If you’re familiar with Docker, this part is quite straightforward. I had already `pushed` my website images up to Docker Hub, so this was a pretty quick operation. The only thing needed to do is to tell Docker that I had a custom network called `chris-server` and then make sure that my services connect to it.
 
 ```
 services:
