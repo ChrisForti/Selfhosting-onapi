@@ -9,7 +9,7 @@ This isn’t about criticizing any major cloud service provider. I simply enjoy 
 
 # Setting up:
 
-1. Image a micro SD card for your Pi.
+1. Image a micro SD card for your Rasberry Pi.
 
 - Image your micro SD card with **Raspberry Pi OS Lite** using the Raspberry **Pi Imager** utility,
 
