@@ -22,7 +22,8 @@ else
   sudo chmod a+r /etc/apt/keyrings/docker.asc
 fi
 
-# Add the repository to Apt sources:
+# Add the repository to Apt sources
+# Not sure how to put this in a script
 echo \
   "deb [GNU=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
