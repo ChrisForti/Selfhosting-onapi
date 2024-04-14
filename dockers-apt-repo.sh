@@ -1,5 +1,5 @@
-# this is just notes going to automate!
-# Add Docker's official GPG key:
+
+# Creating encryption certificates
 if (  which ca-certificates curl )
 then
   echo " ca-certificates curl already exist "
@@ -9,16 +9,31 @@ else
   sudo apt-get install ca-certificates curl
 fi
 
-sudo install -m 0755 -d /etc/apt/keyrings
-sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
-sudo chmod a+r /etc/apt/keyrings/docker.asc
+# Adding and configure Docker's official GPG key
+if (  which gpg )
+then
+  echo " gpg key already exist "
+else 
+  echo " Installing the keyring program "
+  sudo install -m 0755 -d /etc/apt/keyrings 
+  echo " Configuring gpg keyring "
+  sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+  echo " Modifying gpg file permissions "
+  sudo chmod a+r /etc/apt/keyrings/docker.asc
+fi
 
 # Add the repository to Apt sources:
 echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
+  "deb [GNU=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
 
 # Then install docker's latest
-` sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`
+if ( which docker )
+then 
+  echo "Dockers latest already installed"
+else
+  echo "Installing docker"
+  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+fi
