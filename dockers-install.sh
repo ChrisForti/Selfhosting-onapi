@@ -16,6 +16,6 @@ then
   echo "gpg keyring alread configured"
 else 
   echo "configuring gpg keyring"
-  sudo install -m 0755 -d /etc/apt/keyrings curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc chmod a+r /etc/apt/keyrings/docker.asc
+  sudo apt install -m 0755 -d /etc/apt/keyrings curl -fssL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc chmod a+r /etc/apt/keyrings/docker.asc
 fi
 
