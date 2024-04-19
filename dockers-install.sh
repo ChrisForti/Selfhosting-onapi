@@ -1,5 +1,5 @@
- Update
-sudo apt-get update
+# Update
+sudo apt update
 
 # Installing ca-certificates
 if (which ca-certificates)
@@ -7,7 +7,7 @@ then
   echo "ca-certificates already installed"
 else
   echo "Installing ca-certificates"
-  sudo apt-get install ca-certificates
+  sudo apt install ca-certificates
 fi
 
 # Installing curl
@@ -16,7 +16,7 @@ then
   echo "curl already installed"
 else
   echo "Installing curl"
-  sudo apt-get install curl
+  sudo apt install curl
 fi
 
 # Creating a keyrings directory
