@@ -1,4 +1,4 @@
-# Update
+ Update
 sudo apt update
 
 # Installing ca-certificates
@@ -19,20 +19,12 @@ else
   sudo apt install curl
 fi
 
-if (test -f /etc/bin/keyring/docker.asc)
+if (test -f /etc/bin/keyring)
 then
   echo "creatingg keyring"
 else
   echo "Creating keyring"
   sudo apt install /etc/apt/keyrings
-fi
-
-if (test -f /etc/bin/keyring/docker.asc)
-then
-  echo "gpg keyring configured"
-else
-  echo "configuring keyring"
-  sudo chmod a+r /etc/apt/keyrings/docker.asc
 fi
 
 # Adding, and configuration of gpg keyring
@@ -41,6 +33,13 @@ then
   echo "gpg keyring exists, and configured"
 else
   echo "configuring gpg keyring"
-  sudo apt install /etc/apt/keyrings
   sudo curl-fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc 
+fi
+
+if (test -f /etc/bin/keyring/docker.asc)
+then
+  echo "gpg keyring configured"
+else
+  echo "configuring keyring"
+  sudo chmod a+r /etc/apt/keyrings/docker.asc
 fi
