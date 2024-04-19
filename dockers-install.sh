@@ -28,20 +28,12 @@ else
   sudo install -m 0755 -d /etc/apt/keyrings
 fi
 
-# Adding gpg keyring
+# Adding gpg keyring, and configuring
 if (which gpg)
 then
   echo "gpg keyring exists, and configured"
 else
   echo "configuring gpg keyring"
-  sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc 
+  sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc chmod a+r /etc/apt/keyrings/docker.asc
 fi
 
-# Configuring keyring
-if (test -f /etc/bin/keyrings/docker.asc)
-then
-  echo "gpg keyring configured"
-else
-  echo "configuring keyring"
-  sudo chmod a+r /etc/apt/keyrings/docker.asc
-fi
