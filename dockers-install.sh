@@ -7,7 +7,7 @@ then
   echo "ca-certificates already installed"
 else
   echo "Installing ca-certificates"
-  sudo apt install ca-certificates
+  sudo apt install -y ca-certificates
 fi
 
 # Installing curl
@@ -16,11 +16,11 @@ then
   echo "curl already installed"
 else
   echo "Installing curl"
-  sudo apt install curl
+  sudo apt install -y curl 
 fi
 
 # Creating a keyrings directory
-if (test -f /etc/bin/keyrings)
+if (test -d /etc/bin/keyrings)
 then
   echo "creating keyrings"
 else
@@ -35,5 +35,13 @@ then
 else
   echo "configuring gpg keyring"
   sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc; sudo chmod a+r /etc/apt/keyrings/docker.asc
+fi
+
+if (test -f /etc/bin/keyrings/docker.asc)
+then
+  echo " gpg keyring already configured"
+else
+  echo "configuring gpg keyrings"
+  sudo chmod a+r /etc/apt/keyrings/docker.asc
 fi
 
