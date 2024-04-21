@@ -36,7 +36,8 @@ else
   echo "configuring gpg keyring"
   curl -fsSL https://download.docker.com/linux/debian/gpg | sudo -H gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 fi
-
+ 
+# setting permissions 
 if (test -f /etc/bin/keyrings/docker.gpg)
 then
   echo " gpg keyring already configured"
