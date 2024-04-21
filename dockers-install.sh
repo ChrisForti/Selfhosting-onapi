@@ -45,3 +45,28 @@ else
   echo "Setting permissions for gpg keyring"
   sudo chmod a+r /etc/apt/keyrings/docker.gpg
 fi
+
+# Intializing repository, and placing copies in .list files
+if (stat -c "%n" /etc/os-release && echo "$VERSION_CODENAME")
+then 
+  echo "Repository already initialized"
+else
+  echo "Initializing repo"
+  echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+fi 
+
+# Update
+sudo apt update
+
+# Then install docker's latest
+if (which docker)
+then
+  echo "Docker already installed"
+else
+  echo "Installing docker"
+  sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+fi
+
+
