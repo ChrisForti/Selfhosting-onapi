@@ -31,9 +31,9 @@ fi
 # Adding a gpg keyring
 if (stat -c "%a" /etc/bin/keyrings/docker.asc)
 then
-  echo "gpg keyring exists, and configured"
+  echo "gpg keyring already exists"
 else
-  echo "configuring gpg keyring"
+  echo "Installing gpg keyring"
   sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
 fi
  
@@ -42,6 +42,6 @@ if (test -f /etc/bin/keyrings/docker.gpg)
 then
   echo " gpg keyring already configured"
 else
-  echo "configuring gpg keyrings"
+  echo "Setting permissions for gpg keyring"
   sudo chmod a+r /etc/apt/keyrings/docker.gpg
 fi
