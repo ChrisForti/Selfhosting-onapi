@@ -22,4 +22,4 @@ else
   sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 fi
 
-# To test run ` sudo docker run hello-world`
+# To test first run `sudo service docker start` then ` sudo docker run hello-world`
