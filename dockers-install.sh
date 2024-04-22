@@ -2,7 +2,7 @@
 sudo apt update
 
 # Installing ca-certificates
-if (which ca-certificates)
+if (test -d ca-certificates)
 then
   echo "ca-certificates already installed"
 else
