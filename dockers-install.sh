@@ -29,7 +29,7 @@ else
 fi
 
 # Adding a gpg keyring
-if (stat -c "%a" /etc/bin/keyrings/docker.asc)
+if (test -d  /etc/bin/keyrings/docker.asc)
 then
   echo "gpg keyring already exists"
 else
@@ -38,22 +38,21 @@ else
 fi
  
 # setting permissions 
-if (test -f /etc/bin/keyrings/docker.gpg)
+if (test -d /etc/bin/keyrings/docker.asc)
 then
   echo " gpg keyring already configured"
 else
   echo "Setting permissions for gpg keyring"
-  sudo chmod a+r /etc/apt/keyrings/docker.gpg
+  sudo chmod a+r /etc/apt/keyrings/docker.asc
 fi
 
 # Intializing repository, and placing copies in .list files
-if (stat -c "%n" /etc/os-release && echo "$VERSION_CODENAME")
+if (test -S  /etc/os-release && echo "$VERSION_CODENAME")
 then 
   echo "Repository already initialized"
 else
   echo "Initializing repo"
-  echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 fi 
 
