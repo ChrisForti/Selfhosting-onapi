@@ -1,5 +1,11 @@
 # Update
-sudo apt update
+if (apt-cache show docker)
+then
+  echo "Running dockers latest"
+else
+  echo "Updating the latest docker"
+  sudo apt update
+fi
 
 # Installing ca-certificates
 if (test -d ca-certificates)
@@ -57,7 +63,13 @@ else
 fi 
 
 # Update
-sudo apt update
+if (apt-cache show docker)
+then
+  echo "Running dockers latest"
+else
+  echo "Updating the latest docker"
+  sudo apt update
+fi
 
 # Then install docker's latest
 if (which docker)
@@ -67,5 +79,4 @@ else
   echo "Installing docker"
   sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 fi
-
 
