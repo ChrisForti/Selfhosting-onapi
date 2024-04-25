@@ -11,7 +11,7 @@ This isn’t about criticizing any major cloud service provider. I simply enjoy 
 
 1. Image a micro SD card for your Rasberry Pi.
 
-- Image your micro SD card with **Raspberry Pi OS Lite** using the Raspberry **Pi Imager** utility,
+- Image your micro SD card with **Raspbian Pi OS Lite 64 bit** using the Raspberry **Pi Imager** utility,
 
 2. Install Docker 🐳
   - `sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`
