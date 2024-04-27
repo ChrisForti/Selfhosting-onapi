@@ -9,23 +9,21 @@ This isn’t about criticizing any major cloud service provider. I simply enjoy 
 
 # Setting up:
 
-1. Image a micro SD card for your Rasberry Pi.
+1. Image a micro SD card for your Rasberry pi, with **Raspbian Pi OS Lite 64 bit**
 
-- Image your micro SD card with **Raspbian Pi OS Lite 64 bit** using the Raspberry **Pi Imager** utility,
+2. Install all dockers dependencies, and Docker 🐳
 
-2. Install Docker 🐳
-  - `sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`
-  -  `sudo service docker start`
+- run `dockers-install.sh`
+
 - **To test the install** run:
+  - `sudo docker run start`
   - `sudo docker run hello-world`
-- Then we are going to grab their IP addresses, and make note of which Pi had which IP address.
-- Then ssh into each one and install Docker using the official release.
 
 3. Create the cluster using Docker Swarm.
 4. Write the `docker-compose.yml` for your services
 
 - Time to get to defining our services! In this case, I had two websites I wanted to host: **1** my personal website, and **2** a in hopes of, professional website.
-If you’re familiar with Docker, this part is quite straightforward. I had already `pushed` my website images up to Docker Hub, so this was a pretty quick operation. The only thing needed to do is to tell Docker that I had a custom network called `chris-server` and then make sure that my services connect to it.
+  If you’re familiar with Docker, this part is quite straightforward. I had already `pushed` my website images up to Docker Hub, so this was a pretty quick operation. The only thing needed to do is to tell Docker that I had a custom network called `chris-server` and then make sure that my services connect to it.
 
 ```
 services:
