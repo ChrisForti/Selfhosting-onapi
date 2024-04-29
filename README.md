@@ -21,3 +21,11 @@ This isn’t about criticizing any major cloud service provider. I simply enjoy 
   - `sudo docker run hello-world`
 
   - At this point, you should be able to hit the endpoints on any one of the cluster node IPs and see your website!
+
+  ### Built with
+
+  <p>
+   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" />
+   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-plain.svg" />
+   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ohmyzsh/ohmyzsh-original.svg" />
+  </p>
