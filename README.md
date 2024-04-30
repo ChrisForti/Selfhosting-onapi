@@ -26,7 +26,7 @@ This isn’t about criticizing any major cloud service provider. I simply enjoy 
 
   The Docker daemon binds to a Unix socket, not a TCP port. By default it's the root user that owns the Unix socket, and other users can only access it using sudo. The Docker daemon always runs as the root user.
 
-- If you don't want to run docker at root level. You have to create a user,or run Docker without root privileges, [rootles](https://docs.docker.com/engine/security/rootless/)
+- If you don't want to run docker at root level. You have to create a user,or run Docker without root privileges, **checkout:** [rootles](https://docs.docker.com/engine/security/rootless/)
 - To setup user run:
   - `sudo groupadd docker`
   - `sudo usermod -aG docker $USER`
