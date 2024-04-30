@@ -22,12 +22,23 @@ This isn’t about criticizing any major cloud service provider. I simply enjoy 
 
   - At this point, you should be able to hit the endpoints on your IP and see your website!
 
-  ### Built with
+  ## Usage
 
-  <p>
-   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ohmyzsh/ohmyzsh-original.svg" height="80" width="80" hspace="10px"/> 
-   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-plain.svg" height="80" width="80" hspace="10px"/>
-   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" height="80" width="80" hspace="10px" />
-   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/raspberrypi/raspberrypi-original.svg" height="80" width="80" hspace="10px" />
-          
-  </p>
+  The Docker daemon binds to a Unix socket, not a TCP port. By default it's the root user that owns the Unix socket, and other users can only access it using sudo. The Docker daemon always runs as the root user.
+
+- If you don't want to run docker at root level. You have to create a user,or run Docker without root privileges, [rootles](https://docs.docker.com/engine/security/rootless/)
+- To setup user run:
+  - `sudo groupadd docker`
+  - `sudo usermod -aG docker $USER`
+  - `newgrp docker`
+  - `docker run hello-world`
+
+### Built with
+
+   <p>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ohmyzsh/ohmyzsh-original.svg" height="80" width="80" hspace="10px"/> 
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-plain.svg" height="80" width="80" hspace="10px"/>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" height="80" width="80" hspace="10px" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/raspberrypi/raspberrypi-original.svg" height="80" width="80" hspace="10px" />
+           
+   </p>
