@@ -28,10 +28,16 @@ This isn’t about criticizing any major cloud service provider. I simply enjoy 
 
 - If you don't want to run docker at root level. You have to create a user,or run Docker without root privileges, **checkout:** [rootles](https://docs.docker.com/engine/security/rootless/)
 - To setup user run:
+
   - `sudo groupadd docker`
   - `sudo usermod -aG docker $USER`
   - `newgrp docker`
   - `docker run hello-world`
+
+  ## Installing a web interface **portainer**
+
+  - SelfhostedPro/selfhosted-templates/master
+    - https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Template/portainer-v2.json
 
 ### Built with
 
