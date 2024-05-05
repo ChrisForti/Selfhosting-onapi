@@ -14,12 +14,7 @@ echo \
 sudo apt update
 
 # Then install docker's latest
-if (which docker)
-then
-  echo "Docker already installed"
-else
-  echo "Installing docker"
-  sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-fi
+sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
 
 # To test first run `sudo service docker start` then ` sudo docker run hello-world`
