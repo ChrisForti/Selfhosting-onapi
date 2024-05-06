@@ -34,14 +34,7 @@ else
   sudo install -m 0755 -d /etc/apt/keyrings
 fi
 
-# Adding a gpg keyring
-if (test -d  /etc/bin/keyrings/docker.asc)
-then
-  echo "gpg keyring already exists"
-else
-  echo "Installing gpg keyring"
-  sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
-fi
+
  
 # setting permissions 
 if (test -d /etc/bin/keyrings/docker.asc)
