@@ -49,7 +49,12 @@ else
   curl -fsSL https://pkg.cloudflare.com/cloudflared-ascii.repo | sudo tee /etc/apt.repos.d/cloudflared.repo
 fi 
 
-sudo apt update && sudo apt install cloudflared
+if (apt-cache show cloudflared)
+then
+  echo "Running cloudflared's latest"
+else
+  echo "Updating the latest cloudflared"
+  sudo apt update && sudo apt install cloudflared
+fi
 
-# arch linux specific
-pacman -Syu cloudflared
+
