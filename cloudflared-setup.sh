@@ -25,10 +25,30 @@ else
   curl -fsSL https://pkg.cloudflare.com/cloudflare-main.gpg | sudo tee /usr/share/keyrings/cloudflare-main.gpg >/dev/null
 fi
 
-curl -fsSL https://pkg.cloudflare.com/cloudflare-main.gpg | sudo tee /usr/share/keyrings/cloudflare-main.gpg >/dev/null
-echo "deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflared.list
-sudo apt update && sudo apt-get install cloudflared
-curl -fsSL https://pkg.cloudflare.com/cloudflared-ascii.repo | sudo tee /etc/yum.repos.d/cloudflared.repo
+f (test -f /etc/apt/sources.list.d/cloudflared.list)
+then 
+  echo "Repository already initialized"
+else
+  echo "Initializing repo"
+  echo "deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflared.list 
+fi 
+
+if (apt-cache show cloudflared)
+then
+  echo "Running cloudflared's latest"
+else
+  echo "Updating the latest cloudflared"
+  sudo apt update && sudo apt install cloudflared
+fi
+
+if (test -S /etc/apt.repos.d/cloudflared.repo)
+then 
+  echo "Repository already initialized"
+else
+  echo "Initializing repo"
+  curl -fsSL https://pkg.cloudflare.com/cloudflared-ascii.repo | sudo tee /etc/apt.repos.d/cloudflared.repo
+fi 
+
 sudo apt update && sudo apt install cloudflared
 
 # arch linux specific

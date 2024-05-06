@@ -47,13 +47,7 @@ fi
 
 # Intializing repository, and placing copies in .list files
 if (test -S  /etc/os-release && echo "$VERSION_CODENAME")
-then 
-  echo "Repository already initialized"
-else
-  echo "Initializing repo"
-  echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian
-  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-fi 
+
 
 # Update
 if (apt-cache show docker)
