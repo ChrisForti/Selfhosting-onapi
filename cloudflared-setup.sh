@@ -22,9 +22,10 @@ then
   echo "gpg keyring already exists"
 else
   echo "Installing gpg keyring"
+  curl -fsSL https://pkg.cloudflare.com/cloudflare-main.gpg | sudo tee /usr/share/keyrings/cloudflare-main.gpg >/dev/null
+fi
 
-
-f (test -f /etc/apt/sources.list.d/cloudflared.list)
+if (test -f /etc/apt/sources.list.d/cloudflared.list)
 then 
   echo "Repository already initialized"
 else
@@ -55,5 +56,6 @@ else
   echo "Updating the latest cloudflared"
   sudo apt update && sudo apt install cloudflared
 fi
+
 
 
