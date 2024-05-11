@@ -1,5 +1,5 @@
 FROM ros:humble
 
-RUN apt-get update && apt-get install -y nano && -rf /var/lib/apt/lists/*
+RUN apt update && apt install -y nano && -rf /var/lib/apt/lists/*
 
-COPY config/ /sit_config/
+COPY config/ /site_config/
