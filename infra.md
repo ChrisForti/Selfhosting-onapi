@@ -2,7 +2,7 @@
 
 `https://docs.docker.com/engine/install/debian/`
 
-# web interface w/o docker descktop
+# web interface w/o docker desktop
 
 `https://docs.portainer.io/start/install-ce`
 
