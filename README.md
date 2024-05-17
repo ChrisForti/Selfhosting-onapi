@@ -34,10 +34,10 @@ This isn’t about criticizing any major cloud service provider. I simply enjoy 
   - `newgrp docker`
   - `docker run hello-world`
 
-  ## Installing a web interface **portainer**
+  ## Installing a web interface 
 
-  - SelfhostedPro/selfhosted-templates/master
-    - https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Template/portainer-v2.json
+- ### Portainer is a web interface for docker
+docker volume create portainer_data
 
 ### Built with
 
