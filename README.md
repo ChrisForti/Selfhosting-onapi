@@ -17,6 +17,9 @@ This isn’t about criticizing any major cloud service provider. I simply enjoy 
 
 - **To test the install** run:
 
+  - to find current Ip on unix run : `ipconfig getifaddr en1
+`
+
   - `sudo docker run start`
   - `sudo docker run hello-world`
 
