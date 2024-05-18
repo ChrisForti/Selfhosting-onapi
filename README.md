@@ -15,19 +15,21 @@ This isn’t about criticizing any major cloud service provider. I simply enjoy 
 
 - run `dockers-install.sh`
 
-- **To test the install** run:
-
-  - to find current Ip on unix run : `ipconfig getifaddr en1
-`
+- **To test the install**
 
   - `sudo docker run start`
   - `sudo docker run hello-world`
 
-  - At this point, you should be able to hit the endpoints on your IP and see your website!
+## Find Ip address on a unix OS
 
-  ## Usage
+- `ipconfig getifaddr en1`: Returns the IP address for a wired Ethernet connection
+- `ipconfig getifaddr en0`: Returns the IP address of your wireless connection
 
-  The Docker daemon binds to a Unix socket, not a TCP port. By default it's the root user that owns the Unix socket, and other users can only access it using sudo. The Docker daemon always runs as the root user.
+- At this point, you should be able to hit the endpoints on your IP and see your website!
+
+## Usage
+
+The Docker daemon binds to a Unix socket, not a TCP port. By default it's the root user that owns the Unix socket, and other users can only access it using sudo. The Docker daemon always runs as the root user.
 
 - If you don't want to run docker at root level. You have to create a user,or run Docker without root privileges, **checkout:** [rootles](https://docs.docker.com/engine/security/rootless/)
 - To setup user run:
